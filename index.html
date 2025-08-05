@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- fuentes externas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <!-- navbar -->
+      <nav class="nav">
+        <section class="navbar__section container">
+          <!-- imagen logo -->
+          <div>
+            <a href="#"
+              ><img src="./img/logo.svg" alt="logo" class="img__logo"
+            /></a>
+          </div>
+          <!-- lista de menu -->
+          <div>
+            <ul class="list__menu">
+              <li><a href="#" class="list__link">Inicio</a></li>
+              <li><a href="#" class="list__link">Beneficios</a></li>
+              <li><a href="#" class="list__link">Beneficios</a></li>
+              <!-- Boton de contacto -->
+              <div>
+                <button class="button__navbar">Contacto</button>
+              </div>
+            </ul>
+            <!-- menu burguer -->
+            <div class="menu__burguer">
+              <img src="./img/menu.svg" alt="menu" class="burguer" />
+            </div>
+          </div>
+        </section>
+        <!-- menu responivo-->
+        <div class="container">
+          <ul class="list__menu-1">
+            <li><a href="#" class="list__link">Inicio</a></li>
+            <li><a href="#" class="list__link">Beneficios</a></li>
+            <li><a href="#" class="list__link">Beneficios</a></li>
+            <!-- Boton de contacto -->
+            <div>
+              <button class="button__navbar mobile__contact">Contacto</button>
+            </div>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Modal de formulario de contacto -->
+      <div id="contactModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Formulario de Contacto</h2>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="correo">Correo:</label>
+              <input type="email" id="correo" name="correo" required />
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje:</label>
+              <textarea
+                class="mensaje__form"
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- hero -->
+      <section class="section__hero container">
+        <div class="content__div">
+          <div class="div__txt">
+            <h1 class="title">¿Te interesaria aprender con EduClass?</h1>
+          </div>
+          <div class="div__img">
+            <img src="./img/hero.jpg" alt="hero" class="hero__img" />
+          </div>
+        </div>
+      </section>
+    </header>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
