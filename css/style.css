@@ -130,7 +130,7 @@ li {
 }
 
 /* content modal */
-.modal-content {
+.modal__content {
   background-color: white;
   margin: 0 auto;
   padding: 30px;
@@ -158,11 +158,11 @@ li {
   color: coral;
 }
 
-.form-group {
+.form__group {
   margin-bottom: 20px;
 }
 
-.form-group label {
+.form__group label {
   display: block;
   margin-bottom: 5px;
   font-family: "Noto Sans", sans-serif;
@@ -170,8 +170,8 @@ li {
   color: #333;
 }
 
-.form-group input,
-.form-group textarea {
+.form__group input,
+.form__group textarea {
   width: 100%;
   padding: 10px;
   border: 2px solid #ddd;
@@ -180,7 +180,8 @@ li {
   font-size: 14px;
 }
 
-.btn-submit {
+/* button send */
+.btn__submit {
   background-color: coral;
   color: white;
   padding: 12px 30px;
@@ -193,11 +194,13 @@ li {
   width: 100%;
 }
 
-.btn-submit:hover,
+/* hover buttons */
+.btn__submit:hover,
 .button__navbar:hover {
   background-color: #ff6347;
 }
 
+/* title form */
 h2 {
   font-family: "Poppins", sans-serif;
   color: coral;
