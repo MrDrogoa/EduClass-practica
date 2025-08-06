@@ -1,167 +1,194 @@
+/* ===========================================
+   RESET Y CONFIGURACIÓN GLOBAL
+   =========================================== */
+
+/* Reset universal: elimina padding, margin y establece box-sizing */
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
 
+/* Estilo base del body con color de fondo gris claro */
 body {
   background-color: #ddd;
 }
 
-/* list */
+/* ===========================================
+   ELEMENTOS BASE
+   =========================================== */
+
+/* Elimina los puntos de las listas */
 li {
   list-style: none;
 }
 
-/* navbar */
+/* ===========================================
+   NAVEGACIÓN (NAVBAR)
+   =========================================== */
+
+/* Barra de navegación con fondo azul verdoso */
 .nav {
   background-color: cadetblue;
 }
 
-/* container */
+/* Contenedor principal con ancho máximo y centrado */
 .container {
   max-width: 1300px;
-  margin: 0 auto;
-  overflow: hidden;
+  margin: 0 auto; /* Centra horizontalmente */
+  overflow: hidden; /* Previene desbordamiento horizontal */
 }
 
-/* image logo */
+/* Logo de la empresa con ancho del 30% */
 .img__logo {
   width: 30%;
 }
 
-/* section_navbar */
+/* Sección principal del navbar con flexbox para alineación */
 .navbar__section {
   padding: 20px 8px 20px 8px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Separa elementos a los extremos */
+  align-items: center; /* Centra verticalmente */
 }
 
-/* lista de menu */
+/* Lista del menú principal con elementos horizontales */
 .list__menu {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 15px; /* Espacio entre elementos del menú */
   font-family: "Noto Sans", sans-serif;
 }
 
-/* menu burguer */
+/* Menú hamburguesa (oculto por defecto, visible en móviles) */
 .menu__burguer {
   display: none;
 }
 
-/* list link */
+/* Enlaces del menú con estilo de texto */
 .list__link {
   color: white;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none; /* Elimina subrayado */
   font-weight: medium;
 }
 
-/* button contacto */
+/* Botón de contacto en la navbar */
 .button__navbar {
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   font-weight: medium;
-  background-color: coral;
+  background-color: coral; /* Color coral del tema */
   color: white;
   cursor: pointer;
   padding: 5px 10px 5px 10px;
-  border-radius: 8px;
-  border: none;
+  border-radius: 8px; /* Bordes redondeados */
+  border: none; /* Sin borde */
 }
 
-/* section hero */
+/* ===========================================
+   SECCIÓN HERO (PRINCIPAL)
+   =========================================== */
 
+/* Contenedor principal de la sección hero */
 .section__hero {
   margin-top: 10px;
   width: 100%;
-  box-shadow: 2px 2px 7px #bdbdbd;
-  border-radius: 10px;
+  box-shadow: 2px 2px 7px #bdbdbd; /* Sombra sutil */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
-/* hero img */
+/* Imagen principal del hero */
 .hero__img {
   width: 70%;
   display: block;
 }
 
-/* div hero */
+/* Contenedor del texto en el hero */
 .div__txt {
   width: 45%;
   text-align: center;
 }
 
-/* content div */
+/* Contenedor principal del contenido hero con layout flexbox */
 .content__div {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Separa texto e imagen */
   align-items: center;
-  background-color: #fff;
+  background-color: #fff; /* Fondo blanco */
   overflow: hidden;
 }
 
-/* img hero div */
+/* Contenedor de la imagen del hero */
 .div__img {
   width: 45%;
   display: flex;
-  justify-content: right;
+  justify-content: right; /* Alinea imagen a la derecha */
   align-items: center;
 }
 
-/* title hero */
+/* Título principal del hero */
 .title {
   font-family: "Poppins", sans-serif;
   font-size: 40px;
-  color: coral;
+  color: coral; /* Color coral del tema */
 }
 
-/* Modal styles */
+/* ===========================================
+   MODAL (FORMULARIO DE CONTACTO)
+   =========================================== */
+
+/* Contenedor del modal (overlay) */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 2;
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Fijo en pantalla */
+  z-index: 2; /* Por encima de otros elementos */
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
 }
 
-/* content modal */
+/* Contenido del modal (caja blanca) */
 .modal__content {
   background-color: white;
   margin: 0 auto;
   padding: 30px;
   border-radius: 10px;
   width: 90%;
-  max-width: 500px;
+  max-width: 500px; /* Ancho máximo del formulario */
   position: relative;
 }
 
-/* button close */
+/* Botón de cerrar modal (X) */
 .close {
   color: #aaa;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
-  position: absolute;
+  position: absolute; /* Posicionado en esquina superior derecha */
   right: 15px;
   top: 10px;
   display: flex;
   justify-content: flex-end;
 }
 
-/* hover button close */
+/* Efecto hover del botón cerrar */
 .close:hover {
   color: coral;
 }
 
+/* ===========================================
+   FORMULARIO
+   =========================================== */
+
+/* Grupo de campos del formulario */
 .form__group {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Espacio entre campos */
 }
 
+/* Etiquetas de los campos del formulario */
 .form__group label {
   display: block;
   margin-bottom: 5px;
@@ -170,17 +197,18 @@ li {
   color: #333;
 }
 
+/* Campos de entrada (input y textarea) */
 .form__group input,
 .form__group textarea {
   width: 100%;
   padding: 10px;
-  border: 2px solid #ddd;
+  border: 2px solid #ddd; /* Borde gris claro */
   border-radius: 5px;
   font-family: "Noto Sans", sans-serif;
   font-size: 14px;
 }
 
-/* button send */
+/* Botón de envío del formulario */
 .btn__submit {
   background-color: coral;
   color: white;
@@ -191,16 +219,16 @@ li {
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   font-weight: medium;
-  width: 100%;
+  width: 100%; /* Ocupa todo el ancho disponible */
 }
 
-/* hover buttons */
+/* Efectos hover para botones */
 .btn__submit:hover,
 .button__navbar:hover {
-  background-color: #ff6347;
+  background-color: #ff6347; /* Color coral más oscuro */
 }
 
-/* title form */
+/* Título del formulario */
 h2 {
   font-family: "Poppins", sans-serif;
   color: coral;
@@ -208,50 +236,175 @@ h2 {
   text-align: center;
 }
 
-/* textarea */
+/* Textarea sin redimensionamiento */
 .mensaje__form {
   resize: none;
 }
 
-/* menu responsivo */
+/* ===========================================
+   MENÚ MÓVIL
+   =========================================== */
+
+/* Menú responsivo (oculto por defecto) */
 .list__menu-1 {
   display: none;
   padding: 0px 8px 0px 8px;
   font-family: "Noto Sans", sans-serif;
   & .mobile__contact {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Espacio para botón de contacto móvil */
   }
 }
 
-/* responsive design */
+/* ===========================================
+   DISEÑO RESPONSIVO
+   =========================================== */
+
+/* TABLETS Y PANTALLAS MEDIANAS (hasta 1100px) */
 @media (max-width: 1100px) {
-  /* navbar */
+  /* Oculta menú principal en tablets */
   .list__menu {
     display: none;
   }
 
-  /* menu burguer */
+  /* Muestra menú hamburguesa */
   .menu__burguer {
     display: flex;
     & .burguer {
       width: 100%;
     }
   }
-  /* section hero  */
+
+  /* Ajustes de la sección hero para tablets */
   .section__hero {
-    width: 70%;
+    width: 90%; /* Reduce ancho */
+    margin: 10px auto; /* Centra con margen */
     & .title {
-      font-size: 30px;
+      font-size: 35px; /* Reduce tamaño del título */
     }
   }
-  /* content hero */
+
+  /* Layout vertical para contenido hero en tablets */
   .content__div {
-    flex-direction: column;
+    flex-direction: column; /* Cambia a columna vertical */
     justify-content: center;
-    gap: 15px;
+    gap: 20px; /* Espacio entre elementos */
     & .div__img {
-      justify-content: center;
-      width: 80%;
+      justify-content: center; /* Centra imagen */
+      width: 100%;
     }
+    & .div__txt {
+      width: 100%; /* Texto ocupa todo el ancho */
+    }
+  }
+
+  /* Imagen hero más grande en tablets */
+  .hero__img {
+    width: 80%;
+    max-width: 400px; /* Límite máximo */
+  }
+}
+
+/* TABLETS PEQUEÑAS (hasta 768px) */
+@media (max-width: 768px) {
+  .section__hero {
+    width: 95%; /* Aumenta ancho disponible */
+    & .title {
+      font-size: 28px; /* Título más pequeño */
+      margin-bottom: 15px;
+    }
+  }
+
+  .content__div {
+    gap: 15px; /* Reduce espacio entre elementos */
+    padding: 15px;
+    & .div__img {
+      width: 100%;
+    }
+  }
+
+  .hero__img {
+    width: 70%;
+    max-width: 350px;
+  }
+}
+
+/* MÓVILES (hasta 480px) */
+@media (max-width: 480px) {
+  .section__hero {
+    width: 95%;
+    margin: 5px auto; /* Margen reducido */
+    & .title {
+      font-size: 22px; /* Título adaptado a móvil */
+      margin-bottom: 10px;
+      line-height: 1.2; /* Mejor legibilidad */
+    }
+  }
+
+  .content__div {
+    gap: 10px; /* Espacio mínimo */
+    padding: 10px;
+  }
+
+  .hero__img {
+    width: 85%; /* Imagen más grande en móvil */
+    max-width: 280px;
+  }
+
+  /* Modal adaptado para móviles */
+  .modal__content {
+    width: 95%; /* Casi todo el ancho de pantalla */
+    margin: 5% auto;
+    padding: 20px;
+  }
+
+  /* Navbar compacta para móviles */
+  .navbar__section {
+    padding: 15px 8px; /* Padding reducido */
+  }
+
+  .img__logo {
+    width: 40%; /* Logo más grande en móvil */
+  }
+}
+
+/* MÓVILES PEQUEÑOS (hasta 360px) */
+@media (max-width: 360px) {
+  .section__hero {
+    width: 98%; /* Máximo ancho disponible */
+    & .title {
+      font-size: 18px; /* Título muy compacto */
+      margin-bottom: 8px;
+    }
+  }
+
+  .content__div {
+    gap: 8px; /* Espacio mínimo */
+    padding: 8px;
+  }
+
+  .hero__img {
+    width: 90%; /* Imagen ocupa casi todo el ancho */
+    max-width: 250px;
+  }
+
+  .modal__content {
+    width: 98%; /* Modal ocupa casi toda la pantalla */
+    padding: 15px;
+  }
+
+  .img__logo {
+    width: 50%; /* Logo grande para visibilidad */
+  }
+}
+
+/* PANTALLAS EXTRA PEQUEÑAS (hasta 320px) */
+@media (max-width: 320px) {
+  .title {
+    font-size: 16px; /* Título mínimo legible */
+    line-height: 1.1; /* Interlineado compacto */
+  }
+
+  .hero__img {
+    width: 95%; /* Imagen usa casi todo el espacio */
   }
 }
