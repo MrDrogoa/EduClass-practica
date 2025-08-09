@@ -1,0 +1,8 @@
+@import "tailwindcss";
+.font-secondary {
+  font-family: "DM Sans", sans-serif;
+}
+
+.font-primary {
+  font-family: "Sofadi One", system-ui;
+}
