@@ -1,9 +1,14 @@
 <script setup>
-import HomeViews from "./views/HomeViews.vue";
+import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <home-views />
+  <RouterView />
+  <!-- <home-views />
+
+  <LoginViews />
+
+  <DashboardViews /> -->
 </template>
 
 <style scoped></style>
