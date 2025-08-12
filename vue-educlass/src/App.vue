@@ -4,11 +4,6 @@ import { RouterView } from "vue-router";
 
 <template>
   <RouterView />
-  <!-- <home-views />
-
-  <LoginViews />
-
-  <DashboardViews /> -->
 </template>
 
 <style scoped></style>

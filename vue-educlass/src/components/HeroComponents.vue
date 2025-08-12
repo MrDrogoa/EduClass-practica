@@ -5,6 +5,27 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import hero from "../assets/hero.svg";
 // Importa el ícono de flecha para el botón
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+// importa animaciones para vue
+import { ref, onMounted } from "vue";
+// Letras del banner principal
+const text =
+  "Conecta. Aprende. Inspira. Educlass transforma la experiencia educativa para todos.";
+// Variable reactiva para mostrar el texto animado en el h1
+const displayedText = ref("");
+// Cuando el componente se monta en el DOM, inicia la animación de escritura
+onMounted(() => {
+  // Divide el texto original en un array de caracteres
+  let chars = text.split("");
+  // Limpia el texto mostrado antes de iniciar la animación
+  displayedText.value = "";
+  // Recorre cada carácter y lo agrega al texto mostrado con un retraso incremental
+  chars.forEach((char, i) => {
+    setTimeout(() => {
+      // Añade el carácter actual al texto mostrado
+      displayedText.value += char;
+    }, i * 70); // Espera 70ms por cada letra antes de mostrarla
+  });
+});
 </script>
 <template>
   <!-- Sección principal del hero con imagen y texto -->
@@ -25,8 +46,7 @@ import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
           class="font-primary text-xl w-2/3 xl:w-1/2 md:text-3xl mb-4 md:mb-5 lg:mb-6 lg:text-5xl xl:text-6xl font-bold text-center drop-shadow-lg"
         >
           <!-- Mensaje principal del hero -->
-          Conecta. Aprende. Inspira. Educlass transforma la experiencia
-          educativa para todos.
+          {{ displayedText }}
         </h1>
 
         <!-- Botón con ícono que lleva a la página de login -->

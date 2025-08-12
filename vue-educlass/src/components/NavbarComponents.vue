@@ -5,9 +5,10 @@ import logo from "../assets/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 // Importa el ícono de menú hamburguesa
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-// Importa el componente de botón personalizado
-import ButtonComponents from "./ButtonComponents.vue";
-
+// Importa el componente de botón login
+import ButtonLoginComponents from "./ButtonLoginComponents.vue";
+// Importa el componente de botón register
+import ButtonRegisterComponents from "./ButtonRegisterComponents.vue";
 // Importa ref de Vue para manejar el estado del menú
 import { ref } from "vue";
 // Variable reactiva para controlar si el menú móvil está abierto o cerrado
@@ -26,16 +27,19 @@ const menuOpen = ref(false);
         </div>
         <!-- Menú de navegación para pantallas grandes -->
         <div class="hidden lg:block">
-          <ul class="flex items-center gap-6 font-secondary font-medium">
+          <ul class="flex items-center gap-3 font-secondary font-medium">
             <li class="cursor-pointer">
-              <router-link to="/">Inicio</router-link>
+              <router-link to="/">Home</router-link>
             </li>
-            <li class="cursor-pointer">
+            <li class="cursor-pointer mx-3">
               <router-link to="/dashboard">Dashboard</router-link>
             </li>
             <!-- Botón de login -->
             <router-link to="/login">
-              <ButtonComponents />
+              <ButtonLoginComponents />
+            </router-link>
+            <router-link to="/register">
+              <ButtonRegisterComponents />
             </router-link>
           </ul>
         </div>
@@ -65,7 +69,7 @@ const menuOpen = ref(false);
             </li>
             <!-- Botón de login en menú móvil -->
             <router-link to="/login">
-              <ButtonComponents />
+              <ButtonLoginComponents />
             </router-link>
           </ul>
         </div>

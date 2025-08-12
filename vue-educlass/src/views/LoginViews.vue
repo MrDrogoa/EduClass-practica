@@ -1,7 +1,7 @@
 <script setup>
-import FormComponents from "../components/FormComponents.vue";
+import LoginComponents from "../components/LoginComponents.vue";
 import HeaderLayouts from "../layouts/HeaderLayouts.vue";
 </script>
-<template><HeaderLayouts /><FormComponents /></template>
+<template><HeaderLayouts /><LoginComponents /></template>
 
 <style lang="scss" scoped></style>

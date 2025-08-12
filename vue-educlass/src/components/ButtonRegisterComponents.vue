@@ -8,12 +8,11 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
   <!-- Botón de login con ícono y estilos personalizados -->
   <button
     type="submit"
-    class="bg-[#FF5050] py-2 px-5 text-white font-medium rounded-3xl cursor-pointer hover:bg-[#e84c4c] transition"
+    class="bg-[#6e4afd] py-2 px-5 text-white font-medium rounded-3xl cursor-pointer hover:bg-[#5735de] transition"
   >
     <!-- Muestra el ícono de usuarios y el texto 'Login' -->
-    <FontAwesomeIcon :icon="faUsers" /> Login
+    <FontAwesomeIcon :icon="faUsers" /> Register
   </button>
 </template>
 
 <style lang="scss" scoped></style>
-<!-- Bloque de estilos para el componente, actualmente vacío -->

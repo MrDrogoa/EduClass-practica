@@ -4,6 +4,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeViews from "../views/HomeViews.vue";
 import LoginViews from "../views/LoginViews.vue";
 import DashboardViews from "../views/DashboardViews.vue";
+import RegisterViews from "../views/RegisterViews.vue";
+import ErrorViews from "../views/ErrorViews.vue";
 
 // Define las rutas entre las diferentes vistas de la aplicación
 const router = createRouter({
@@ -18,6 +20,16 @@ const router = createRouter({
       path: "/login", // Ruta de login
       name: "login",
       component: LoginViews,
+    },
+    {
+      path: "/register", // Ruta de Register
+      name: "register",
+      component: RegisterViews,
+    },
+    {
+      path: "/error", // Ruta de Register
+      name: "error",
+      component: ErrorViews,
     },
     {
       path: "/dashboard", // Ruta del dashboard
@@ -42,7 +54,7 @@ router.beforeEach((to, from, next) => {
   // Verifica si la ruta requiere autenticación
   if (to.meta.requiresAuth) {
     // Verifica si hay un usuario autenticado en Vuex
-    const isAuthenticated = store && store.state.form.isAuthenticated;
+    const isAuthenticated = store && store.getters["form/isAuthenticated"];
     if (!isAuthenticated) {
       // Si no está autenticado, redirige a login
       next({ name: "login" });
