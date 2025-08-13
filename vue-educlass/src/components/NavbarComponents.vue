@@ -32,7 +32,9 @@ const menuOpen = ref(false);
               <router-link to="/">Home</router-link>
             </li>
             <li class="cursor-pointer mx-3">
-              <router-link to="/dashboard">Dashboard</router-link>
+              <router-link to="/dashboardprof"
+                >Dashboard Profesores</router-link
+              >
             </li>
             <!-- Botón de login -->
             <router-link to="/login">
@@ -63,14 +65,19 @@ const menuOpen = ref(false);
               <router-link to="/" @click="menuOpen = false">Inicio</router-link>
             </li>
             <li class="cursor-pointer">
-              <router-link to="/dashboard" @click="menuOpen = false"
-                >Dashboard</router-link
+              <router-link to="/dashboardprof" @click="menuOpen = false"
+                >Dashboard Profesores</router-link
               >
             </li>
             <!-- Botón de login en menú móvil -->
-            <router-link to="/login">
-              <ButtonLoginComponents />
-            </router-link>
+            <div class="flex gap-2">
+              <router-link to="/login">
+                <ButtonLoginComponents />
+              </router-link>
+              <router-link to="/register">
+                <ButtonRegisterComponents />
+              </router-link>
+            </div>
           </ul>
         </div>
       </article>

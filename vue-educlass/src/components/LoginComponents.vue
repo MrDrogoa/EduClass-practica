@@ -57,12 +57,12 @@ const handleLogin = async () => {
     // Guarda el token en Vuex para activar el guardia global
     const idToken = await userCredential.user.getIdToken();
     store.dispatch("form/saveToken", idToken);
-
+    // console.log(idToken);
     // Redirige según el rol
     if (userData.rol === "admin") {
       router.push({ name: "dashboard" });
     } else {
-      router.push({ name: "login" });
+      router.push({ name: "home" });
     }
   } catch (error) {
     alert(error.message); // Muestra un mensaje de error si falla el login
@@ -105,7 +105,7 @@ const handleLogin = async () => {
       <!-- Campo de contraseña -->
       <div class="mb-4 font-secondary">
         <!-- Etiqueta para el campo de contraseña -->
-        <label for="nombre" class="block text-[#339B9F] font-medium mb-2"
+        <label for="contraseña" class="block text-[#339B9F] font-medium mb-2"
           >Contraseña</label
         >
         <!-- Enlaza el input con la variable reactiva contraseña -->

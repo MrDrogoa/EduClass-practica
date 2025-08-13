@@ -1,6 +1,32 @@
 <script setup>
-// Recibe la lista de usuarios como prop desde el componente padre
-defineProps({ usuarios: Array }); // Define la propiedad 'usuarios' que será pasada desde el componente padre
+// Importa las funciones necesarias de Vue y Vuex
+import { ref, onMounted } from "vue";
+import router from "../router";
+import { useStore } from "vuex";
+
+// Obtiene la instancia del store de Vuex
+const store = useStore();
+// Define una variable reactiva para almacenar los profesores disponibles
+const profesoresDisponibles = ref([]);
+
+// Cuando el componente se monta...
+onMounted(async () => {
+  // Verifica si el usuario está autenticado usando el getter de Vuex
+  // Con este if fuerzo el error
+  //   if (false) {
+  if (store.getters["form/isAuthenticated"]) {
+    // Realiza una petición para obtener los datos de los profesores
+    const response = await fetch("/src/api/profesores.json");
+    const data = await response.json();
+    // Filtra los profesores que están disponibles
+    profesoresDisponibles.value = data.filter(
+      (prof) => prof.disponibilidad === false
+    );
+  } else {
+    // Si no está autenticado, redirige al usuario a la página de error
+    router.push("/errorauth");
+  }
+});
 </script>
 <template>
   <!-- Sección principal centrada en la pantalla -->
@@ -25,48 +51,39 @@ defineProps({ usuarios: Array }); // Define la propiedad 'usuarios' que será pa
             <th
               class="bg-[#FF5050] text-white py-3 px-2 text-center rounded-2xl"
             >
-              Nombre
-              <!-- Nombre del usuario -->
+              Profesor
+              <!-- Nombre del profesor -->
             </th>
             <th
               class="bg-[#FF5050] text-white py-3 px-2 text-center rounded-2xl"
             >
-              Correo
-              <!-- Correo electrónico del usuario -->
+              Curso
+              <!-- Nombre del curso -->
             </th>
             <th
               class="bg-[#FF5050] text-white py-3 px-2 text-center rounded-2xl"
             >
-              Rol
-              <!-- Rol del usuario -->
+              Disponibilidad
+              <!-- Disponibilidad del profesor -->
             </th>
           </tr>
         </thead>
         <tbody>
-          <!-- Itera sobre la lista de usuarios y muestra cada uno en una fila -->
-          <tr v-for="(usuario, index) in usuarios" :key="index">
-            <!-- Recorre cada usuario y lo muestra en una fila -->
+          <!-- Itera sobre la lista de profesores disponibles y muestra cada uno en una fila -->
+          <tr v-for="(prof, index) in profesoresDisponibles" :key="index">
             <td
               class="bg-gray-100 text-center py-3 px-2 font-medium rounded-2xl"
             >
-              <!-- Muestra el índice como ID -->
               {{ index + 1 }}
-              <!-- ID generado por el índice del array -->
             </td>
             <td class="bg-gray-100 text-center py-3 px-2 rounded-2xl">
-              <!-- Muestra el nombre del usuario -->
-              {{ usuario.nombre }}
-              <!-- Nombre del usuario -->
+              {{ prof.nombre }}
             </td>
             <td class="bg-gray-100 text-center py-3 px-2 rounded-2xl">
-              <!-- Muestra el correo del usuario -->
-              {{ usuario.correo }}
-              <!-- Correo electrónico del usuario -->
+              {{ prof.curso }}
             </td>
             <td class="bg-gray-100 text-center py-3 px-2 rounded-2xl">
-              <!-- Muestra el rol del usuario -->
-              {{ usuario.rol }}
-              <!-- Rol del usuario -->
+              {{ prof.disponibilidad ? "Disponible" : "No disponible" }}
             </td>
           </tr>
         </tbody>
@@ -76,4 +93,3 @@ defineProps({ usuarios: Array }); // Define la propiedad 'usuarios' que será pa
 </template>
 
 <style lang="scss" scoped></style>
-<!-- Bloque de estilos para el componente, actualmente vacío -->

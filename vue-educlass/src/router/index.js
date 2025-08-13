@@ -4,8 +4,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeViews from "../views/HomeViews.vue";
 import LoginViews from "../views/LoginViews.vue";
 import DashboardViews from "../views/DashboardViews.vue";
+import DashboardProfViews from "../views/DashboardProfViews.vue";
 import RegisterViews from "../views/RegisterViews.vue";
 import ErrorViews from "../views/ErrorViews.vue";
+import ErrorAuthViews from "../views/ErrorAuthViews.vue";
 
 // Define las rutas entre las diferentes vistas de la aplicación
 const router = createRouter({
@@ -27,15 +29,25 @@ const router = createRouter({
       component: RegisterViews,
     },
     {
-      path: "/error", // Ruta de Register
+      path: "/error", // Ruta de error 404
       name: "error",
       component: ErrorViews,
+    },
+    {
+      path: "/errorauth", // Ruta de error 401
+      name: "errorauth",
+      component: ErrorAuthViews,
     },
     {
       path: "/dashboard", // Ruta del dashboard
       name: "dashboard",
       component: DashboardViews,
-      meta: { requiresAuth: true }, // Indica que requiere autenticación
+      meta: { requiresAuth: false }, // Indica que requiere autenticación
+    },
+    {
+      path: "/dashboardprof", // Ruta del dashboardProf
+      name: "dashboardprof",
+      component: DashboardProfViews,
     },
   ],
 });

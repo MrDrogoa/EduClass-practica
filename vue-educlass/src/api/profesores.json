@@ -1,0 +1,29 @@
+[
+  { "nombre": "Ignacio Diaz", "curso": "Ingles", "disponibilidad": true },
+  {
+    "nombre": "Maria Torres",
+    "curso": "Matematicas",
+    "disponibilidad": false
+  },
+  { "nombre": "Luis Perez", "curso": "Lenguaje", "disponibilidad": true },
+  { "nombre": "Ana Gomez", "curso": "Historia", "disponibilidad": false },
+  { "nombre": "Carlos Ruiz", "curso": "Ciencias", "disponibilidad": true },
+  { "nombre": "Sofia Martinez", "curso": "Arte", "disponibilidad": false },
+  {
+    "nombre": "Javier Lopez",
+    "curso": "Educacion Fisica",
+    "disponibilidad": true
+  },
+  { "nombre": "Patricia Castro", "curso": "Musica", "disponibilidad": false },
+  {
+    "nombre": "Fernando Silva",
+    "curso": "Tecnologia",
+    "disponibilidad": true
+  },
+  {
+    "nombre": "Gabriela Soto",
+    "curso": "Geografia",
+    "disponibilidad": false
+  },
+  { "nombre": "Ricardo Vargas", "curso": "Quimica", "disponibilidad": true }
+]

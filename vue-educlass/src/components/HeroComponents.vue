@@ -43,7 +43,7 @@ onMounted(() => {
         class="absolute inset-0 flex flex-col items-center justify-center text-white"
       >
         <h1
-          class="font-primary text-xl w-2/3 xl:w-1/2 md:text-3xl mb-4 md:mb-5 lg:mb-6 lg:text-5xl xl:text-6xl font-bold text-center drop-shadow-lg"
+          class="font-primary text-md sm:text-2xl w-2/3 md:w-[60%] xl:w-1/2 md:text-3xl leading-4 sm:leading-7 md:leading-8 lg:leading-10 xl:leading-14 mb-0 sm:mb-4 md:mb-5 lg:mb-6 lg:text-5xl xl:text-6xl font-bold text-center drop-shadow-lg"
         >
           <!-- Mensaje principal del hero -->
           {{ displayedText }}
@@ -53,7 +53,7 @@ onMounted(() => {
         <router-link to="/login">
           <FontAwesomeIcon
             :icon="faArrowRightLong"
-            class="text-2xl md:text-3xl lg:text-4xl"
+            class="text-lg sm:text-xl md:text-3xl lg:text-4xl hover:opacity-80 transition-all duration-300 cursor-pointer"
           />
         </router-link>
       </div>
